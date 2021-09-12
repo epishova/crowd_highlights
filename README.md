@@ -22,13 +22,9 @@ As a backend I used MongoDB to store the workers' results. Here is the database 
 
 ## Data files in the repository
 
-* Gold standards_corrected.doc - contains all texts for all tasks with marked clues/traps, and correct answers. The highlights in the text are made for reference. To check the exact words which determine clues/traps see Python script  
-* FN_FP_stat - false positives and false negatives counts and ratios for clues and traps for all tasks
-* regression_*.csv - data which I used for regression models
-* marks_FEB_2_bin.txt - highlights extracted from the database for Treatment 2 binary answers
-* marks_FEB_3_bin.txt - highlights extracted from the database for Treatment 3 binary answers
-* db_script_* - files containing groupId for which I extracted highlights from the database
-* marks_* - dumped highlights. Those files are parsed by Python scripts to count statistics
+* Gold standards_corrected.docx - contains all texts for all tasks with marked clues/traps, and correct answers. The highlights in the text are made for reference. To check the exact words which determine clues/traps see Python script  
+* FN_FP_stat.docx - false positives and false negatives counts and ratios for clues and traps for all tasks
+* regression_\*.csv - data which I used for regression models
 
 Below are the steps which I performed in order to extract workers' highlights:
 
