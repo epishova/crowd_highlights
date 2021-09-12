@@ -1,0 +1,139 @@
+<template name="description">
+    <h2>Description</h2>
+
+    {{#if experimentType '1' "Budget"}}
+        <!--1-3--><p>You will be given three different texts. Each text is a 2-page description of a ski-resort. Let’s say that you, your spouse and your 7-year-old child
+            plan to go on vacation there for <strong>14 days, from 23th of December to 6th of January.</strong></p>
+        <p>You need to buy flight tickets. Suppose that the base prices for all flights from your current location to the
+            destination are the same. However, some airlines offer discounts. Additionally, all of you are novice skiers.
+            So, you need to buy a ski-pass, rent equipment and take a few lessons to learn how to ski. You need 2 days to learn how to ski.
+            You plan to ski for full 10 days in total and spend the remaining days resting, walking, and attending different events.
+            At every day that you do not ski you need to attend one activity of your choice.</p>
+        <!--1-3--><p>For each text you need to decide if the minimal budget that your family needs to go on vacation is less than 4500 euro.
+        Please read the text carefully. After that, at the bottom of the text press the button that represents your answer.</p>
+    {{/if}}
+    {{#if experimentType '2' "Budget"}}
+	<p>You will be given a 2-page description of a ski-resort. Let us say that you, your spouse and your 7-year-old child
+        plan to go on vacation there for <strong>14 days, from 23th of December to 6th of January.</strong></p>
+        <p>First, you need to include into your budget expenses for housing, food, and round-trip flight tickets.
+            Suppose that the base prices for all flights from your current location to the
+            destination are the same. Next, you need to get from the airport to the ski-resort. All of you are novice skiers.
+            So, you need to buy a ski-pass, rent equipment and take a few lessons to learn how to ski. You need 2 days to learn how to ski.
+            You plan to ski for full 10 days in total and spend the remaining days resting, walking, and attending different events.
+            At every day that you do not ski you need to attend one activity of your choice.</p>
+		<!--1-3--><p><strong>You need to decide if the minimal budget that your family needs to go on vacation is less than 4500 euro.</strong>
+        Please read the text carefully. After that, at the bottom of the text press the button that represents your answer.
+        During the task, you can always return to this description by clicking the corresponding tab at the top of this page.
+        </p>
+    {{/if}}
+    {{#if experimentType '3A' "Budget"}}
+        <p>You will be given a 2-page description of a ski-resort. Let’s say that you, your spouse and your 7-year-old child
+            plan to go on vacation there for <strong>14 days, from 23th of December to 6th of January.</strong></p>
+        <p>First, you need to include into your budget expenses for housing, food, and round-trip flight tickets.
+            Suppose that the base prices for all flights from your current location to the
+            destination are the same. Next, you need to get from the airport to the ski-resort. All of you are novice skiers.
+            So, you need to buy a ski-pass, rent equipment and take a few lessons to learn how to ski. You need 2 days to learn how to ski.
+            You plan to ski for full 10 days in total and spend the remaining days resting, walking, and attending different events.
+            At every day that you do not ski you need to attend one activity of your choice.</p>
+        <p>Please read the text, find and highlight all sentences that would help to determine if the minimal budget that your
+            family needs to go on vacation is less than 4500 euro.</p>
+        <p><strong>To highlight the sentence, first select it with a mouse and then press “s” on the keyboard. To remove the highlighting,
+            first select it and then press “d” on the keyboard.</strong></p>
+    {{/if}}
+    {{#if experimentType '3B' "Budget"}}
+        <p>You will be given a 2-page description of a ski-resort. Let’s say that you, your spouse and your 7-year-old child
+            plan to go on vacation there for <strong>14 days, from 23th of December to 6th of January.</strong></p>
+        <p>First, you need to include into your budget expenses for housing, food, and round-trip flight tickets.
+            Suppose that the base prices for all flights from your current location to the
+            destination are the same. Next, you need to get from the airport to the ski-resort. All of you are novice skiers.
+            So, you need to buy a ski-pass, rent equipment and take a few lessons to learn how to ski. You need 2 days to learn how to ski.
+            You plan to ski for full 10 days in total and spend the remaining days resting, walking, and attending different events.
+            At every day that you do not ski you need to attend one activity of your choice.</p>
+        <p>You need to decide if the minimal budget that your family needs to go on vacation is less than 4500 euro.
+            To help you in this task, some sentences are highlighted in the text. However, it is not
+            guaranteed that all highlighted sentences are relevant to your question. After choosing you answer, press the corresponding button
+            at the bottom of the text.</p>
+    {{/if}}
+
+    {{#if experimentType '1' "Famous"}}
+        <!--1-3<p>You will be given a 2-page description of a ski-resort. This text mentions famous people, who visited it, or made a contribution to its developments, or lived not far
+            from there. You need to answer if the number of famous persons, mentioned in the text, is strictly less than 16.
+            Please read the text carefully. After that, at the bottom of the text press the button that represents your answer.</p>-->
+        <p>You will be given three different texts. Each text is a 2-page description of a ski-resort. Texts mention famous people,
+            who visited the resort, or made a contribution to its developments, or lived not far
+            from there. For each text you need to answer if the number of famous persons, mentioned in it, is strictly less than 16.
+            Please read the text carefully. After that, at the bottom of the text press the button that represents your answer.</p>
+    {{/if}}
+    {{#if experimentType '2' "Famous"}}
+        <p>You will be given a 2-page description of a ski-resort. This text mentions famous people,
+            who visited the resort, or made a contribution to its developments, or lived not far
+            from there. You need to answer if the number of famous persons, mentioned in it, is strictly less than 16.
+            Please read the text carefully. After that, at the bottom of the text press the button that represents your answer.
+            During the task, you can always return to this description by clicking the corresponding tab at the top of this page.</p>
+    {{/if}}
+    {{#if experimentType '3A' "Famous"}}
+        <p>You will be given a 2-page description of a ski-resort. This text mentions famous people, who visited it, or made a contribution to its developments, or lived not far
+            from there. Please read the text, find and highlight all sentences that would help to determine if the number of famous
+            persons, mentioned in the text, is strictly less than 16.</p>
+        <p><strong>To highlight the sentence, first select it with a mouse and then press “s” on the keyboard. To remove the highlighting,
+            first select it and then press “d” on the keyboard.</strong></p>
+    {{/if}}
+    {{#if experimentType '3B' "Famous"}}
+        <p>You will be given a 2-page description of a ski-resort. This text mentions famous people, who visited it, or made a contribution to its developments, or lived not far
+            from there. You need to answer if the number of famous persons, mentioned in the text, is strictly less than 16.</p>
+        <p>To help you in this task, some sentences are highlighted in the text. However, it is not
+            guaranteed that all highlighted sentences are relevant to your question. After choosing you answer, press the corresponding button in the
+            bottom of the text. </p>
+    {{/if}}
+
+    {{#if experimentType '1' "Events"}}
+        <p>You will be given a 2-page description of a ski-resort. This text describes different spots
+            (museums, exhibitions, sports events, etc.) which you can attend. For each text you need to answer if it is possible to visit all
+            events which take place from <strong>20th of December to 10th of January</strong>. Additionally, assume
+            that you need to <strong>attend every event for 2 hours and travel time between any two spots is 1 hour. </strong>
+            Please, consider events, sightseeing, museums, exhibitions etc.
+            and pay attention to the date and time of the event and count each place only once.</p>
+        <p>Please read the text carefully. After that, at the bottom of the text press the button that represents your answer.</p>
+    {{/if}}
+    {{#if experimentType '2' "Events"}}
+        <p>You will be given a 2-page description of a ski-resort. This text describes different spots
+            (museums, exhibitions, sports events, etc.) which you can attend. For each text you need to answer if it is possible to visit all
+            events which take place from <strong>20th of December to 10th of January</strong>. Additionally, assume
+        that you need to <strong>attend every event for 2 hours and travel time between any two spots is 1 hour. </strong>
+            Please, consider events, sightseeing, museums, exhibitions etc.
+            and pay attention to the date and time of the event and count each place only once.</p>
+    <p>Please read the text carefully. After that, at the bottom of the text press the button that represents your answer.
+    </p>
+    {{/if}}
+    {{#if experimentType '3A' "Events"}}
+        <p>You will be given a 2-page description of a ski-resort. This text describes different spots
+            (museums, exhibitions, sports events, etc.) which you can attend. Please read the text, find and highlight all sentences that would help to
+            determine if it is possible to visit all events which take place from <strong>20th of December to 10th of January</strong>.
+            Additionally, assume that you need to <strong>attend every event for 2 hours and travel time between any two spots is 1 hour. </strong>
+            Please, consider events, sightseeing, museums, exhibitions etc.
+            and pay attention to the date and time of the event and count each place only once.</p>
+        <p><strong>To highlight the sentence, first select it with a mouse and then press “s” on the keyboard. To remove the highlighting,
+            first select it and then press “d” on the keyboard.</strong></p>
+    {{/if}}
+    {{#if experimentType '3B' "Events"}}
+        <p>You will be given a 2-page description of a ski-resort. All texts describe different spots
+            (museums, exhibitions, sports events, etc.) which a tourist can attend. You need to answer if it is possible to visit all
+            events which take place from <strong>20th of December to 10th of January</strong>. Additionally,
+            assume that you need to <strong>attend every event for 2 hours and travel time between any two spots is 1 hour. </strong>
+            Please, consider events, sightseeing, museums, exhibitions etc.
+            and pay attention to the date and time of the event and count each place only once.</p>
+        <p>To help you in this task, some sentences are highlighted in the text. However, it is not
+            guaranteed that all highlighted sentences are relevant to your question. After choosing you answer, press the corresponding button in the
+            bottom of the text. </p>
+    {{/if}}
+
+    <p>The declared reward of $0.50 will be paid to you under the following conditions: (1) you pass the quiz, (2) pass the training phase, and
+        (3) provide the highlighting for the main text. Sentences which you highlighted will be given to another worker,
+        who should answer the same question. Each of you will receive a $0.30 bonus for the correct answer provided by that worker and no bonus in case
+        of incorrect choice. <strong>Your goal is to highlight all information that will help to determine the correct answer.</strong>
+        You can highlight as much information as you think is appropriate. However, note that irrelevant data could distract the second worker's
+        attention and make him answer incorrectly.</p>
+
+    <a href="{{pathFor 'quiz'}}" class="btn btn-primary" role="button" id="nextDescr">Next</a>
+
+</template>

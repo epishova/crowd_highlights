@@ -1,0 +1,155 @@
+<template name="dbdata">
+    <div class="form-group">
+        <input class="form-control" id="inputWorkerId">
+        <a class="btn btn-primary" role="button" id="findByWorkerId">Find by workerId</a>
+        <a class="btn btn-primary" role="button" id="findByGroupId">Find by groupId</a>
+    </div>
+
+    <h2>UHexperiments:</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>_id</th>
+            <th>experimentType</th>
+            <th>question</th>
+            <th>quizDone</th>
+            <th>quizN</th>
+            <th>testDone</th>
+            <th>testN</th>
+            <th>testChanged</th>
+            <th>resort1</th>
+            <th>answer1</th>
+            <th>answer1MsecCl</th>
+            <th>resort2</th>
+            <th>answer2</th>
+            <th>answer2MsecCl</th>
+            <th>resort3</th>
+            <th>answer3</th>
+            <th>answer3MsecCl</th>
+            <th>goBefore</th>
+            <th>groupId</th>
+            <th>assignmentId</th>
+            <th>asstId</th>
+            <th>batchId</th>
+            <th>hitId</th>
+            <th>userId</th>
+            <th>workerId</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {{#each showUHexperiments}}
+            <tr>
+                <th>{{{_id}}}</th>
+                <th>{{{experimentType}}}</th>
+                <th>{{{question}}}</th>
+                <th>{{{quizDone}}}</th>
+                <th>{{{quizN}}}</th>
+                <th>{{{testDone}}}</th>
+                <th>{{{testN}}}</th>
+                <th>{{{testChanged}}}</th>
+                <th>{{{resort1}}}</th>
+                <th>{{{answer1}}}</th>
+                <th>{{{answer1MsecCl}}}</th>
+                <th>{{{resort2}}}</th>
+                <th>{{{answer2}}}</th>
+                <th>{{{answer2MsecCl}}}</th>
+                <th>{{{resort3}}}</th>
+                <th>{{{answer3}}}</th>
+                <th>{{{answer3MsecCl}}}</th>
+                <th>{{{goBefore}}}</th>
+                <th>{{{groupId}}}</th>
+                <th>{{{assignmentId}}}</th>
+                <th>{{{asstId}}}</th>
+                <th>{{{batchId}}}</th>
+                <th>{{{hitId}}}</th>
+                <th>{{{userId}}}</th>
+                <th>{{{workerId}}}</th>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+    <h2>mainText:</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>_id</th>
+            <th>experimentType</th>
+            <th>groupId</th>
+            <th>name</th>
+            <th>pid</th>
+            <th>markedText</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each showMainText}}
+            <tr>
+                <th>{{{_id}}}</th>
+                <th>{{{experimentType}}}</th>
+                <th>{{{groupId}}}</th>
+                <th>{{{name}}}</th>
+                <th>{{{pid}}}</th>
+                <th>{{{markedText}}}</th>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+    <h2>testText:</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>_id</th>
+            <th>experimentType</th>
+            <th>groupId</th>
+            <th>name</th>
+            <th>userText</th>
+            <th>markedText</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each showtestText}}
+            <tr>
+                <th>{{{_id}}}</th>
+                <th>{{{experimentType}}}</th>
+                <th>{{{groupId}}}</th>
+                <th>{{{name}}}</th>
+                <th>{{{userText}}}</th>
+                <th>{{{markedText}}}</th>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+    <h2>bigLog:</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>_id</th>
+            <th>groupId</th>
+            <th>elementId</th>
+            <th>elementType</th>
+            <th>eventId</th>
+            <th>templateId</th>
+            <th>currDateStr</th>
+            <!--<th>currMsec</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        {{#each showBigLog }}
+            <tr>
+                <th>{{{_id}}}</th>
+                <th>{{{groupId}}}</th>
+                <th>{{{elementId}}}</th>
+                <th>{{{elementType}}}</th>
+                <th>{{{eventId}}}</th>
+                <th>{{{templateId}}}</th>
+                <th>{{{currDateStr}}}</th>
+                <!--<th>{{{currMsec}}}</th>-->
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+</template>

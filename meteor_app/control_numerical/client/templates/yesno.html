@@ -1,0 +1,18 @@
+<template name="yesNo">
+    <div class="input-group">
+        {{#if experimentType "Budget"}}
+            <label>Text #{{textNumber}}. What is the minimum budget (in euro) that your family needs to go on vacation?</label>
+        {{/if}}
+        {{#if experimentType "Famous"}}
+            <label>Text #{{textNumber}}. How many famous people relating to the resort are mentioned in the text?</label>
+        {{/if}}
+        {{#if experimentType "Events"}}
+            <label>Text #{{textNumber}}. How many of the events you can attend from 20th of December to 10th of January?</label>
+        {{/if}}
+        <div class="form-inline">
+            <input class="form-control" type="number" id="inputAnswer">
+            <button class="btn btn-primary {{isDisabled 'yes'}}" type="button" id="yesAnswer">Submit</button>
+        </div>
+    </div>
+</template>
+

@@ -1,0 +1,22 @@
+{
+"galaxy.meteor.com": {
+     "env": {
+       "MONGO_URL": "mongodb://"
+	 }
+   },
+"turkserver": {
+"adminPassword": "",
+"experiment": {
+"limit": {
+"batch": 1
+}
+},
+"mturk": {
+"sandbox": false,
+"accessKeyId": "",
+"secretAccessKey": "",
+"externalUrl": "https://uh2.meteorapp.com",
+"frameHeight": 600
+}
+}
+}

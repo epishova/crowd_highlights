@@ -1,0 +1,115 @@
+<template name="itemUI">
+    {{#if testTask}}
+        <br>
+        <p><strong>Here is a <span style="color: red">preliminary test</span> for you to try how to answer the question.
+            You have <span style="color: red">{{testNumber}}</span> to complete it.</strong></p>
+
+        {{#if experimentType "3B" "All"}}
+            {{#if experimentQuestion "Budget" "1"}}
+                <p>Please read the paragraph and answer <strong>if the minimum budget to get from Nashville to St. Petersburg for two persons is less than $1800</strong>.
+                    To help you to determine the correct answer some relevant information is highlighted. If needed, you can change the highlighting.</p>
+            {{/if}}
+            {{#if experimentQuestion "Budget" "2"}}
+                <p>Here is the list of stores in a shopping mall. Please read the paragraph and answer
+                    <strong>if it is possible to buy a pair of jeans, a t-shirt and a pair of sneakers for less than $170 in total</strong>.
+                    To help you to determine the correct answer some relevant information is highlighted. If needed, you can change the highlighting.</p>
+            {{/if}}
+            {{#if experimentQuestion "Budget" "3"}}
+                <p>Here is the list of all dining options available today at a university campus. Please read the paragraph and answer
+                    <strong>if it is possible to have breakfast, lunch, and dinner for less than $15 in total</strong>.
+                    To help you to determine the correct answer some relevant information is highlighted. If needed, you can change the highlighting.</p>
+            {{/if}}
+
+            {{#if experimentQuestion "Events" "1"}}
+                <p>Please read the paragraph and answer <strong>if it is possible to visit all mentioned tours during one week</strong>.
+                    To help you to determine the correct answer some relevant information is highlighted. If needed, you can change the highlighting.</p>
+            {{/if}}
+            {{#if experimentQuestion "Events" "2"}}
+                <p>Please read the paragraph and answer <strong>if it is possible to visit all mentioned events happening this week</strong>.
+                    Additionally, suppose that you need to <strong>attend every event for 1 hour.</strong>
+                    To help you to determine the correct answer some relevant information is highlighted. If needed, you can change the highlighting.</p>
+            {{/if}}
+            {{#if experimentQuestion "Events" "3"}}
+                <p>Please read the paragraph and answer <strong>if it is possible to take all spring classes during one semester</strong>.
+                    To help you to determine the correct answer some relevant information is highlighted. If needed, you can change the highlighting.</p>
+            {{/if}}
+
+            {{#if experimentQuestion "Famous" "1"}}
+                <p>Please read the paragraph and answer <strong>if the number of famous persons mentioned in the text is less than 5</strong>.
+                    To help you to determine the correct answer you can highlight relevant sentences in the text.</p>
+            {{/if}}
+            {{#if experimentQuestion "Famous" "2"}}
+                <p>Please read the paragraph and answer <strong>if the number of mentioned actors/actresses who appeared only in silent movies is less than 3</strong>.
+                    To help you to determine the correct answer you can highlight relevant sentences in the text.</p>
+            {{/if}}
+            {{#if experimentQuestion "Famous" "3"}}
+                <p>Please read the paragraph and answer <strong>if the number of male names appeared in the text is greater than 8</strong>.
+                    To help you to determine the correct answer you can highlight relevant sentences in the text.</p>
+            {{/if}}
+
+            {{#unless dataLoading}}
+                {{#each showTestText}}
+                    <p>{{{markedText}}}</p>
+                {{/each}}
+                {{#if experimentQuestion "Budget" "1"}}
+                    <label>Is the minimal budget to get from Nashville to St. Petersburg for two persons is less than $1800?</label>
+                {{/if}}
+                {{#if experimentQuestion "Budget" "2"}}
+                    <label>Is it possible to buy a pair of jeans, a t-shirt and a pair of sneakers for less than $170 in total?</label>
+                {{/if}}
+                {{#if experimentQuestion "Budget" "3"}}
+                    <label>Is it possible to have breakfast, lunch, and dinner for less than $15 in total?</label>
+                {{/if}}
+
+                {{#if experimentQuestion "Events" "1"}}
+                    <label>Is it possible to visit all mentioned tours during one week?</label>
+                {{/if}}
+                {{#if experimentQuestion "Events" "2"}}
+                    <label>Is it possible to visit all mentioned events happening this week?</label>
+                {{/if}}
+                {{#if experimentQuestion "Events" "3"}}
+                    <label>Is it is possible to take all spring classes during one semester?</label>
+                {{/if}}
+
+                {{#if experimentQuestion "Famous" "1"}}
+                    <label>Is the number of famous persons mentioned in the text less than 5?</label>
+                {{/if}}
+                {{#if experimentQuestion "Famous" "2"}}
+                    <label>Is the number of mentioned actors/actresses who appeared only in silent movies is less than 3?</label>
+                {{/if}}
+                {{#if experimentQuestion "Famous" "3"}}
+                    <label>Is the number of male names appeared in the text is greater than 8?</label>
+                {{/if}}
+
+                <button class="btn btn-success" type="button" id="test2YesAnswer">Yes</button>
+                <button class="btn btn-danger" type="button" id="test2NoAnswer">No</button>
+            {{/unless}}
+            {{#if dataLoading}}
+                <br><br>
+                <p>Data is loading... If it does not appear in a few seconds, please update the page</p>
+                <br><br>
+            {{/if}}
+        {{/if}}
+
+        <div id="rightTestAnswer" style="{{showRightAnswer}}">
+            <p><strong>The correct answer to this test <span style="color: red"> was {{correctTestAnswer}}</span>. The evidence is highlighted.</strong></p>
+            <button class="btn btn-primary" type="button" id="gotIt">Got it</button>
+        </div>
+    {{/if}}
+
+    {{#unless testTask}}
+        {{> itemText}}
+        <br>
+        {{#if provideAnswer}}
+            {{> yesNo}}
+        {{/if}}
+
+        {{#unless provideAnswer}}
+            <button class="btn btn-primary {{isDisabled 'sbmt'}}" type="button" id="submitMarked">Submit results for Text #{{textNumber}}</button>
+        {{/unless}}
+
+        <div style="visibility: {{isVisible}}"><p>Please read the text carefully. The buttons remain inactive until the minimum amount of time needed to read the text passes.</p></div>
+        <p><strong>Please note, that your bonus is entirely dependent on the correctness of your answer.</strong></p>
+        <a href="{{pathFor 'quiz'}}" class="btn btn-default" role="button" id="itemUIBack">Back</a>
+    {{/unless}}
+</template>

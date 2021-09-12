@@ -1,0 +1,91 @@
+<template name="itemUI">
+    {{#if testTask}}
+        <br>
+        <p><strong>Here is a <span style="color: red">preliminary test</span> for you to try how to answer the question.
+            You have <span style="color: red">{{testNumber}}</span> to complete it.</strong></p>
+
+        {{#if experimentType "3A" "All"}}
+            {{#if experimentQuestion "Budget" "1"}}
+                <p>Please read the paragraph, find and highlight all information that will help to determine <strong>if the minimum budget to get from Nashville to St. Petersburg for two persons
+                    is less than $1800</strong>. The correct highlighting should include key information to deduce the answer and exclude distracting irrelevant data.</p>
+            {{/if}}
+            {{#if experimentQuestion "Budget" "2"}}
+                <p>Here is the list of stores in a shopping mall. Please read the paragraph, find and highlight all information that would help to determine
+                    <strong>if it is possible to buy a pair of jeans, a t-shirt and a pair of sneakers for less than $170 in total</strong>.
+                    The correct highlighting should include key information to deduce the answer and exclude distracting irrelevant data.</p>
+            {{/if}}
+            {{#if experimentQuestion "Budget" "3"}}
+                <p>Here is the list of all dining options available today at a university campus. Please read the paragraph, find and highlight all information that would help to determine
+                    <strong>if it is possible to have breakfast, lunch, and dinner for less than $15 in total</strong>.
+                    The correct highlighting should include key information to deduce the answer and exclude distracting irrelevant data.</p>
+            {{/if}}
+
+            {{#if experimentQuestion "Events" "1"}}
+                <p>Please read the paragraph, find and highlight all information that would help to determine <strong>if a tourist can visit all mentioned
+                    tours during one week</strong>. The correct highlighting should include key information to deduce the answer and exclude distracting irrelevant data.</p>
+            {{/if}}
+            {{#if experimentQuestion "Events" "2"}}
+                <p>Please read the paragraph, find and highlight all information that would help to determine <strong>if you can visit all mentioned events happening this week</strong>.
+                    Additionally, suppose that you need to <strong>attend every event for 1 hour</strong>. The correct highlighting should include key information to deduce the answer and exclude distracting irrelevant data.</p>
+            {{/if}}
+            {{#if experimentQuestion "Events" "3"}}
+                <p>Please read the paragraph, find and highlight all information that would help to determine <strong>if it is possible to take all spring classes
+                    during one semester</strong>. The correct highlighting should include key information to deduce the answer and exclude distracting irrelevant data.</p>
+            {{/if}}
+
+            {{#if experimentQuestion "Famous" "1"}}
+                <p>Please read the paragraph, find and highlight all sentences that would help to determine <strong>if the number of famous persons mentioned
+                    in the text is less than 5</strong>.</p>
+            {{/if}}
+            {{#if experimentQuestion "Famous" "2"}}
+                <p>Please read the paragraph, find and highlight all sentences that would help to determine <strong>if the number of mentioned
+                    actors/actresses who appeared in sound movies is less than 3</strong>.</p>
+            {{/if}}
+            {{#if experimentQuestion "Famous" "3"}}
+                <p>Please read the paragraph, find and highlight all sentences that would help to determine <strong>if the number of male
+                    names appeared in the text is greater than 8</strong>.</p>
+            {{/if}}
+
+            {{#unless dataLoading}}
+                {{#each showTestText}}
+                    <p>{{{markedText}}}</p>
+                {{/each}}
+
+                <button class="btn btn-primary" type="button" id="submitMarkedTest">Submit test results</button>
+
+            {{/unless}}
+            {{#if dataLoading}}
+                <br><br>
+                <p>Data is loading... If it does not appear in a few seconds, please update the page</p>
+                <br><br>
+            {{/if}}
+        {{/if}}
+
+        <div id="rightTestAnswer" style="{{showRightAnswer}}">
+            <br>
+            <div id="correctSubmitTest" style="{{showRightAnswerYes}}"><p><strong>Your highlighting is correct and helpful in answering the question. Please proceed to the task.</strong></p></div>
+            <div id="correctSubmitTest" style="{{showRightAnswerNo}}">
+                <p><strong>The answer was {{correctTestAnswer}}, but your highlighting could not help to determine it. Here we highlighted the minimum set of information without which the correct answer cannot be deduced.</strong></p>
+            </div>
+            <button class="btn btn-primary" type="button" id="gotIt">Got it</button>
+        </div>
+
+    {{/if}}
+
+    {{#unless testTask}}
+        {{> itemText}}
+        <br>
+        {{#if provideAnswer}}
+            {{> yesNo}}
+        {{/if}}
+
+        {{#unless provideAnswer}}
+            <button class="btn btn-primary {{isDisabled 'sbmt'}}" type="button" id="submitMarked">Submit results for Text #{{textNumber}}</button>
+        {{/unless}}
+
+        <br>
+        <div style="visibility: {{isVisible}}"><p>Please read the text carefully. The button remains inactive until the minimum amount of time needed to read the text passes.</p></div>
+        <p><strong>Please note, that your bonus is dependent on the quality of your answer.</strong></p>
+        <a href="{{pathFor 'quiz'}}" class="btn btn-default" role="button" id="itemUIBack">Back</a>
+    {{/unless}}
+</template>

@@ -1,0 +1,1 @@
+uhmarks = new Mongo.Collection('uhmarks');
